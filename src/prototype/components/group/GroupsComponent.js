@@ -109,7 +109,7 @@ export class GroupsComponent extends React.Component {
                     {console.log(this.state.groups)}
 
 
-                {this.state.groups !== null && this.state.component === 'a-groups' && this.state.groups.map(group =>
+                {this.state.groups.length !== 0 && this.state.component === 'a-groups' && this.state.groups.map(group =>
                                                                                   <Group
                                                                                       key={group.id}
                                                                                       profile={this.props.profile}
@@ -119,7 +119,7 @@ export class GroupsComponent extends React.Component {
                                                                                   />
                 )}
 
-                {this.props.profile !== null && this.state.component === 'm-groups' && this.state.groups !== null
+                {this.state.groups.length === 0  && this.state.component === 'm-groups' && this.state.groups !== null
                  && this.state.groups.map((group, index) =>
                                              ( group.usersList.some(member =>
                                                                        // console.log(member)
