@@ -13,7 +13,7 @@ export class Profile extends React.Component{
     }
 
     componentDidMount() {
-        if(this.state.profile.username === null) {
+        if(this.state.profile === null) {
             this.setState({
                 profile:JSON.parse(localStorage.getItem("profile"))
                           })
@@ -56,7 +56,7 @@ export class Profile extends React.Component{
                 {this.state.profile !== null &&
                     <div className="container">
 
-                        <h1>{this.state.profile.username}</h1>
+                        <h1>{this.state.profile.username}'s Profile</h1>
 
                         <form>
 
@@ -131,11 +131,11 @@ export class Profile extends React.Component{
                                 {!this.state.editing && (this.state.profile.dob !== null && this.state.profile.dob !== undefined) && <div className="col-sm-10">
                                     {this.state.profile.dob.slice(0,10)}
                                 </div>}
-                                {this.state.editing && this.state.profile.dob !== null && <div className="col-sm-10">
+                                {this.state.editing &&  <div className="col-sm-10">
                                     <input onChange={(e) => this.setState({
                                                                               profile: {...this.state.profile, dob: e.target.value}
                                                                           })}
-                                           value={this.state.profile.dob.slice(0,10)}
+                                           value={this.state.profile.dob !== null && this.state.profile.dob.slice(0,10)}
                                         type="date" className="form-control wbdv-field wbdv-dob"/>
                                 </div>}
                             </div>

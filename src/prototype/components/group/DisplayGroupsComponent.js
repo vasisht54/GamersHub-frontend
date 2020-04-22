@@ -18,7 +18,12 @@ export class DisplayGroupsComponent extends React.Component {
         game: ''
     }
 
-    // componentDidMount() {
+    componentDidMount() {
+        this.setState({
+            groupInfo:this.props.groupInfo,
+            members: this.props.members
+                      })
+    }
     //     findGameByIdFromGroup(this.props.groupInfo.gameId).
     //     then(game =>
     //     this.setState({

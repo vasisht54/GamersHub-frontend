@@ -9,7 +9,7 @@ export class EditGroupComponent extends React.Component {
     state = {
         display: false,
         members: this.props.members,
-        groupInfo: this.props.group,
+        groupInfo: this.props.groupInfo,
         game:this.props.game,
         games:[]
     }

@@ -22,13 +22,15 @@ export class Login extends React.Component {
     handleLogin = (user) =>
         login(user)
             .then(newUser => {
+
                       // console.log(JSON.stringify(newUser))
+
                       findUserById(newUser.id)
                           .then(currentUser =>
                                                 {
 
                                           localStorage.setItem("profile", JSON.stringify(currentUser))
-                                          this.props.history.push('/profile')
+                                          this.props.history.push('/search')
                                       })
                   }
             )
@@ -45,6 +47,7 @@ export class Login extends React.Component {
                         </li>
                     </ul>
                 </nav>
+                {localStorage.getItem("profile") !== null && this.props.history.push("profile")}
                 <div className="container">
                     <h1>Sign In</h1>
 
@@ -92,7 +95,7 @@ export class Login extends React.Component {
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label"></label>
                             <div className="col-sm-10">
-                                <button type="button" onClick={() => this.props.history.push('/')}
+                                <button type="button" onClick={() => this.props.history.push('/search')}
                                         className="btn btn-danger form-control">
                                     Cancel
                                 </button>

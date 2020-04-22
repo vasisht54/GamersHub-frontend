@@ -94,7 +94,7 @@ export class Group extends React.Component {
                             <h1 >
                             <Link to={`/search/groups/${this.props.group.id}`}
                                   style={{float: "left"}}
-                                  href=""> {this.props.group.name}</Link>
+                                  href=""> {this.state.groupInfo.name}</Link>
                         </h1>
 
                         <br/>
@@ -147,6 +147,7 @@ export class Group extends React.Component {
                             {this.state.editing && <div><EditGroupComponent
                                 profile={this.props.profile}
                                 group={this.props.group}
+                                groupInfo={this.state.groupInfo}
                                 members={this.state.members}
                                 admin={this.state.admin}
                                 updateGroup={this.updateGroup}

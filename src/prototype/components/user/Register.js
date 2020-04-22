@@ -21,13 +21,16 @@ export default class Register extends React.Component {
         else if(this.state.password === ''){
             alert('Password cannot be empty')
         }
+        else if(this.state.username === 'admin' || this.state.password === 'admin'){
+            alert('Username or Password not allowed')
+        }
 
         else {
             // alert('user registered')
             register(user)
                 .then(user => {
                     localStorage.setItem("profile", JSON.stringify(user))
-                    this.props.history.push('/profile')
+                    this.props.history.push('/search')
                 } )
         }
     }
@@ -44,6 +47,7 @@ export default class Register extends React.Component {
                         </li>
                     </ul>
                 </nav>
+                {localStorage.getItem("profile") !== null && this.props.history.push("profile")}
                 <div className="container">
                     <h1>
                         Sign Up
@@ -109,9 +113,6 @@ export default class Register extends React.Component {
                                        placeholder="Password"
                                        value={this.state.verifyPassword}/>
                             </div>
-                            {this.state.match}
-                            {this.state.password}
-                            {this.state.verifyPassword}
                             { !this.state.match  && <div className="col">
                                 <label className="alert alert-success wbdv-message form-control">
                                     Password do not match
@@ -136,7 +137,7 @@ export default class Register extends React.Component {
                             </label>
                             <div className="col-sm">
                                 <button type="button"
-                                        onClick={() => this.props.history.push('/prototype')}
+                                        onClick={() => this.props.history.push('/search')}
                                         className="btn btn-danger form-control">
                                     Cancel
                                 </button>

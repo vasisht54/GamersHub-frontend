@@ -21,7 +21,7 @@ export class GroupsComponent extends React.Component {
         component: 'a-groups',
         groups: [],
         members: [],
-        game:'',
+        game: '',
 
         myGroups: []
     }
@@ -34,7 +34,6 @@ export class GroupsComponent extends React.Component {
                                         groups: groups
                                     })
             )
-
 
         // let allMyGroups = []
         //
@@ -72,9 +71,10 @@ export class GroupsComponent extends React.Component {
     deleteGroup = (groupId) =>
         deleteGroup(groupId)
             .then((response) =>
-            this.setState({
-                groups: this.state.groups.filter(group => group.id !== groupId)
-                          }))
+                      this.setState({
+                                        groups: this.state.groups.filter(
+                                            group => group.id !== groupId)
+                                    }))
 
     render() {
         return (
@@ -103,41 +103,43 @@ export class GroupsComponent extends React.Component {
                 <br/>
                 {this.props.profile !== null && <a
                     href='/creategroup'
-                   style={{float: "right"}}>Create Group</a>}
+                    style={{float: "right"}}>Create Group</a>}
                 <br/>
-                <div className="container">
-                    {console.log(this.state.groups)}
+                {this.state.groups.length !== 0 && <div className="container">
+                    {console.log(this.state.groups.length)}
 
 
-                {this.state.groups.length !== 0 && this.state.component === 'a-groups' && this.state.groups.map(group =>
-                                                                                  <Group
-                                                                                      key={group.id}
-                                                                                      profile={this.props.profile}
-                                                                                      group={group}
-                                                                                      game={this.state.game}
-                                                                                      deleteGroup={this.deleteGroup}
-                                                                                  />
-                )}
+                    {this.state.groups.length !== 0 && this.state.component === 'a-groups'
+                     && this.state.groups.map(group =>
+                                                  <Group
+                                                      key={group.id}
+                                                      profile={this.props.profile}
+                                                      group={group}
+                                                      game={this.state.game}
+                                                      deleteGroup={this.deleteGroup}
+                                                  />
+                    )}
 
-                {this.state.groups.length === 0  && this.state.component === 'm-groups' && this.state.groups !== null
-                 && this.state.groups.map((group, index) =>
-                                             ( group.usersList.some(member =>
-                                                                       // console.log(member)
-                                                                       (member.id
-                                                                        === this.props.profile.id))
-                                              ||
-                                              (group.groupAdmin.id === this.props.profile.id) )
-                 &&
-                                              < Group
-                                                  group={group}
-                                                  profile={this.props.profile}
-                                                  deleteGroup={this.deleteGroup}
-                                                  game={this.state.game}
-                                              />
-                )
+                    {this.state.groups.length !== 0 && this.state.component === 'm-groups'
+                     && this.state.groups !== null
+                     && this.state.groups.map((group, index) =>
+                     (group.usersList.some(member =>
+                                               // console.log(member)
+                                               (member.id
+                                                === this.props.profile.id))
+                      ||
+                      (group.groupAdmin.id === this.props.profile.id))
+                     &&
+                     < Group
+                         group={group}
+                         profile={this.props.profile}
+                         deleteGroup={this.deleteGroup}
+                         game={this.state.game}
+                     />
+                    )
 
-                }
-                </div>
+                    }
+                </div>}
             </div>
         )
     }
