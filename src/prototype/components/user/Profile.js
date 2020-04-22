@@ -60,14 +60,7 @@ export class Profile extends React.Component{
 
                         <form>
 
-                            <div className="form-group row">
-                                <label className="col-sm-2 col-form-label"></label>
-                                <div className="col-sm-10">
-                                    <label className="alert alert-success wbdv-message col-sm-12"
-                                           role="alert">
-                                        Profile successfully saved</label>
-                                </div>
-                            </div>
+
 
                             <div className="form-group row">
                                 <label className="col-sm-2 col-form-label">Username</label>
@@ -135,14 +128,14 @@ export class Profile extends React.Component{
 
                             <div className="form-group row">
                                 <label className="col-sm-2 col-form-label">Date of Birth</label>
-                                {!this.state.editing && <div className="col-sm-10">
-                                    {this.state.profile.dob}
+                                {!this.state.editing && this.state.profile.dob !== null && <div className="col-sm-10">
+                                    {this.state.profile.dob.slice(0,10)}
                                 </div>}
-                                {this.state.editing && <div className="col-sm-10">
+                                {this.state.editing && this.state.profile.dob !== null && <div className="col-sm-10">
                                     <input onChange={(e) => this.setState({
                                                                               profile: {...this.state.profile, dob: e.target.value}
                                                                           })}
-                                           value={this.state.profile.dob}
+                                           value={this.state.profile.dob.slice(0,10)}
                                         type="date" className="form-control wbdv-field wbdv-dob"/>
                                 </div>}
                             </div>
