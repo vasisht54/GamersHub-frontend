@@ -1,0 +1,13 @@
+.game-img {
+    width: 300px;
+    height: 300px;
+}
+
+.game-description {
+    font-size: 15px;
+}
+
+.game-groups-title {
+    margin: 20px 0 10px 0;
+    text-align: left;
+}

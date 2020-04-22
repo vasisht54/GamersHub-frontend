@@ -1,0 +1,77 @@
+.wbdv-user-admin {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+
+header nav {
+    background-color: #e3f2fd;
+}
+
+.wbdv-user-admin-header {
+    background: #f8f9fa;
+}
+
+.wbdv-user-admin-header li {
+    border: 0;
+    background: #f8f9fa;
+    font-size: 12px;
+}
+
+.wbdv-list {
+    padding-right: 0;
+}
+
+.wbdv-user-row {
+    font-size: 12px;
+}
+
+.wbdv-row li {
+    border: 0;
+}
+
+.wbdv-title {
+    padding-left: 10px;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.wbdv-editFld {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.wbdv-last-modified {
+    font-size: 50%;
+}
+
+.wbdv-delete {
+    border: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .wbdv-owner, .wbdv-last-modified, .wbdv-modified-date {
+        display: none;
+    }
+}
+
+.wbdv-button {
+    background: transparent;
+    border: 0;
+}
+
+.highlight {
+    background-color: #e3f2fd;
+
+}
+
