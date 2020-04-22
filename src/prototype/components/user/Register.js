@@ -143,11 +143,10 @@ export default class Register extends React.Component {
                                 </button>
 
                                 <div className="row">
-                                    <div className="col-sm-6">
-                                        <a href="/login"
-                                           className="wbdv-link wbdv-login">
-                                            Login
-                                        </a>
+                                    <div className="col-6">
+                                        <a style={{float:"left"}}
+
+                                           href="/login" className="wbdv-link wbdv-forgot-password">Login</a>
                                     </div>
                                 </div>
                             </div>

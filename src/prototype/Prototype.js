@@ -87,7 +87,8 @@ export default class Prototype extends React.Component {
                             <span>
                                 <li className="topnav-right" style={{float: "right", cursor: "pointer"}}>
 
-                                    <a className="nav-link"
+                                    <a href="/search"
+                                        className="nav-link"
                                        onClick={this.logout}>
                                         Logout
                                     </a>

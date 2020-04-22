@@ -22,16 +22,19 @@ export class Login extends React.Component {
     handleLogin = (user) =>
         login(user)
             .then(newUser => {
+                      if (newUser.id === 0 && newUser.username === null) {
+                          alert('User does not exist')
+                      }
 
                       // console.log(JSON.stringify(newUser))
+                      else {
+                          findUserById(newUser.id)
+                              .then(currentUser => {
 
-                      findUserById(newUser.id)
-                          .then(currentUser =>
-                                                {
-
-                                          localStorage.setItem("profile", JSON.stringify(currentUser))
-                                          this.props.history.push('/search')
-                                      })
+                                  localStorage.setItem("profile", JSON.stringify(currentUser))
+                                  this.props.history.push('/search')
+                              })
+                      }
                   }
             )
 
@@ -60,8 +63,8 @@ export class Login extends React.Component {
                             <div className="col-sm-10">
                                 <input type="text" id="username"
                                        onChange={(e) => this.setState({
-                                           username: e.target.value
-                                       })}
+                                                                          username: e.target.value
+                                                                      })}
                                        className="form-control wbdv-field wbdv-username"
                                        placeholder="Username"/>
                             </div>
@@ -74,8 +77,8 @@ export class Login extends React.Component {
                             <div className="col-sm-10">
                                 <input type="password"
                                        onChange={(e) => this.setState({
-                                           password: e.target.value
-                                       })}
+                                                                          password: e.target.value
+                                                                      })}
                                        className="form-control "
                                        placeholder="Password"/>
                             </div>
@@ -95,22 +98,27 @@ export class Login extends React.Component {
                         <div className="form-group row">
                             <label className="col-sm-2 col-form-label"></label>
                             <div className="col-sm-10">
-                                <button type="button" onClick={() => this.props.history.push('/search')}
+                                <button type="button"
+                                        onClick={() => this.props.history.push('/search')}
                                         className="btn btn-danger form-control">
                                     Cancel
                                 </button>
 
                                 <div className="row">
 
-                                    <div className="col-6">
-                                        <a onClick={() => alert('Please contact the admin')}
-                                            href="#" className="wbdv-link wbdv-forgot-password">Forgot
-                                            Password?</a>
-                                    </div>
+
 
                                     <div className="col-6">
-                                        <a href="/register"
-                                           className="float-right wbdv-link wbdv-register">Sign up</a>
+                                        <a style={{float:"left"}}
+                                            onClick={() => alert('Please contact the admin')}
+                                           href="#" className="wbdv-link wbdv-forgot-password">Forgot
+                                            Password?</a>
+                                    </div>
+                                    <div className="col-6">
+                                        <a style={{float:"right"}}
+                                            href="/register"
+                                           className="float-right wbdv-link wbdv-register">Sign
+                                            up</a>
                                     </div>
                                 </div>
                             </div>
