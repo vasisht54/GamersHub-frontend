@@ -28,15 +28,7 @@ export class EditGroupComponent extends React.Component {
     render() {
         return (
             <div>
-                <nav>
-                    <ul className="topnav" id="dropDown">
-                        <li style={{cursor: "pointer"}}>
-                            <Link to={`/search`}>
-                                <i className="fas fa-home"></i>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
+
                 <div className="row" style={{float: "right"}}>
                     <button type="button"
                             className="btn btn-danger"

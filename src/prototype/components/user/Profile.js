@@ -128,7 +128,7 @@ export class Profile extends React.Component{
 
                             <div className="form-group row">
                                 <label className="col-sm-2 col-form-label">Date of Birth</label>
-                                {!this.state.editing && this.state.profile.dob !== null && <div className="col-sm-10">
+                                {!this.state.editing && (this.state.profile.dob !== null && this.state.profile.dob !== undefined) && <div className="col-sm-10">
                                     {this.state.profile.dob.slice(0,10)}
                                 </div>}
                                 {this.state.editing && this.state.profile.dob !== null && <div className="col-sm-10">

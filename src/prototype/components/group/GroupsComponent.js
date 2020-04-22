@@ -105,9 +105,11 @@ export class GroupsComponent extends React.Component {
                     href='/creategroup'
                    style={{float: "right"}}>Create Group</a>}
                 <br/>
+                <div className="container">
+                    {console.log(this.state.groups)}
 
 
-                {this.state.component === 'a-groups' && this.state.groups.map(group =>
+                {this.state.groups !== null && this.state.component === 'a-groups' && this.state.groups.map(group =>
                                                                                   <Group
                                                                                       key={group.id}
                                                                                       profile={this.props.profile}
@@ -117,7 +119,7 @@ export class GroupsComponent extends React.Component {
                                                                                   />
                 )}
 
-                {this.props.profile !== null && this.state.component === 'm-groups'
+                {this.props.profile !== null && this.state.component === 'm-groups' && this.state.groups !== null
                  && this.state.groups.map((group, index) =>
                                              ( group.usersList.some(member =>
                                                                        // console.log(member)
@@ -135,6 +137,7 @@ export class GroupsComponent extends React.Component {
                 )
 
                 }
+                </div>
             </div>
         )
     }
