@@ -108,8 +108,8 @@ export class Profile extends React.Component{
                                 </div>}
                                 {this.state.editing && <div className="col-sm-10">
                                     <input onChange={(e) => this.setState({
-                                                                              profile: {...this.state.profile, lastName: e.target.value}
-                                                                          })}
+                                        profile: {...this.state.profile, lastName: e.target.value}
+                                    })}
                                            value={this.state.profile.lastName}
                                            className="form-control wbdv-field wbdv-username"
                                            placeholder="Username"/>

@@ -104,7 +104,7 @@ export class UserProfile extends React.Component{
                                 {this.state.userGroups.length>0 && <div>
                                     <ul className="list-group">
                                         {this.state.userGroups.map(group =>
-                                            <li className="list-group-item m-2">
+                                            <li key={group.id} className="list-group-item m-2">
                                                 <h3>{group.name}</h3>
                                                 <ul className="list-group">
                                                     {group.usersList.map(user =>
