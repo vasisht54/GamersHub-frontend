@@ -112,23 +112,23 @@ export class EditGroupComponent extends React.Component {
                         <ul className="list-group m-4">
                             {this.state.members.length > 0 &&
                              this.state.members.map((member) =>
-                                                        <li className="list-group-item m-2">
-                                                            <Link
-                                                                to={`/search/user/${member.id}`}
-                                                                style={{float: "left"}}
-                                                                href=""> {member.username}</Link>
-                                                            <button
-                                                                onClick={() => this.props.deleteMemberFromGroup(member.id)
-                                                                    .then(this.setState({
-                                                                        members: this.state.members.filter(
-                                                                            user => member.id !== user.id)
-                                                                                        }))
-                                                                }
-                                                                className="btn btn-danger"
-                                                                style={{float: "right"}}
-                                                                type="button">Remove
-                                                            </button>
-                                                        </li>
+                                <li className="list-group-item m-2">
+                                    <Link
+                                        to={`/search/user/${member.id}`}
+                                        style={{float: "left"}}
+                                        href=""> {member.username}</Link>
+                                    <button
+                                        onClick={() => this.props.deleteMemberFromGroup(member.id)
+                                            .then(this.setState({
+                                                members: this.state.members.filter(
+                                                    user => member.id !== user.id)
+                                                                }))
+                                        }
+                                        className="btn btn-danger"
+                                        style={{float: "right"}}
+                                        type="button">Remove
+                                    </button>
+                                </li>
                              )}
 
 

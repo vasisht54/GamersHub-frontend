@@ -50,15 +50,6 @@ export class DisplayGroupsComponent extends React.Component {
     render() {
         return (
             <div>
-                <nav>
-                    <ul className="topnav" id="dropDown">
-                        <li style={{cursor: "pointer"}}>
-                            <Link to={`/search`}>
-                                <i className="fas fa-home"></i>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
                 <br/>
                 <form>
                     <div className="row">
@@ -80,7 +71,7 @@ export class DisplayGroupsComponent extends React.Component {
                         }
                     </div>
                     <div className="row">
-                <h4 className="col-2"
+                    <h4 className="col-2"
                     style={{float: "left"}}>Description :</h4>
 
 
