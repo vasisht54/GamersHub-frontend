@@ -37,7 +37,7 @@ export default class GameDetails extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>
@@ -62,7 +62,7 @@ export default class GameDetails extends React.Component {
                             this.state.gameGroups && this.state.gameGroups.length > 0
                             && this.state.gameGroups.map(group =>
                                 <li key={group.id} className="list-group-item">
-                                    <Link to={`/gamebook/groups/${group.id}`}
+                                    <Link to={`/search/groups/${group.id}`}
                                           style={{float: "left"}}
                                           href=""> {group.name}</Link>
                                 </li>

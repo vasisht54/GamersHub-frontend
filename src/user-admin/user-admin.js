@@ -27,7 +27,7 @@ export class UserAdmin extends React.Component{
                         <div>
                             <header>
                                 <nav className="navbar navbar-expand-lg navbar-light">
-                                    <Link to={`/gamebook`}>
+                                    <Link to={`/search`}>
                                         <i className="fas fa-home"></i>
                                     </Link>
                                     <a className="navbar-brand collapse navbar-collapse wbdv-user-admin" href="#">User Admin</a>

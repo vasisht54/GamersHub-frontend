@@ -25,7 +25,7 @@ class UserRow extends React.Component {
                 <li className="list-group-item col-2 col-sm-2 col-md-2">
                     {
                         !this.state.editing &&
-                        <Link to={`/gamebook/user/${this.state.user.id}`} className="wbdv-row wbdv-title">
+                        <Link to={`/search/user/${this.state.user.id}`} className="wbdv-row wbdv-title">
                             {this.state.user.username}
                         </Link>
                     }

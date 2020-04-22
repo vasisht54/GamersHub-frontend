@@ -31,7 +31,7 @@ export class EditGroupComponent extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>
@@ -114,7 +114,7 @@ export class EditGroupComponent extends React.Component {
                              this.state.members.map((member) =>
                                                         <li className="list-group-item m-2">
                                                             <Link
-                                                                to={`/gamebook/user/${member.id}`}
+                                                                to={`/search/user/${member.id}`}
                                                                 style={{float: "left"}}
                                                                 href=""> {member.username}</Link>
                                                             <button

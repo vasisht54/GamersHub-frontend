@@ -13,11 +13,12 @@ class GameCard extends React.Component {
     render() {
         return (
             <div className="card">
-
-                <img src={this.props.game.background_image} className="card-img-top"
-                     style={{height: '150px'}} alt="..."/>
+                <Link to={`/search/details/${this.props.game.id}`}>
+                    <img src={this.props.game.background_image} className="card-img-top"
+                         style={{height: '150px'}} alt="No Image"/>
+                </Link>
                 <div className="card-body" key={this.props.game.id}>
-                    <Link to={`/gamebook/game/${this.props.game.id}`}>
+                    <Link to={`/search/details/${this.props.game.id}`}>
                         {this.props.game.name}
                     </Link>
                 </div>

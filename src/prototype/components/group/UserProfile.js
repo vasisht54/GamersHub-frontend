@@ -51,7 +51,7 @@ export class UserProfile extends React.Component{
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>
@@ -109,7 +109,7 @@ export class UserProfile extends React.Component{
                                                 <ul className="list-group">
                                                     {group.usersList.map(user =>
                                                         <li className="list-group-item">
-                                                            <Link to={`/gamebook/user/${user.id}`}
+                                                            <Link to={`/search/user/${user.id}`}
                                                                   style={{float: "left"}}
                                                                   href=""> {user.username}</Link>
                                                         </li>

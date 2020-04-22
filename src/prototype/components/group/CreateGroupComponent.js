@@ -36,7 +36,7 @@ export class CreateGroupComponent extends React.Component {
 
     createGroup = (group) =>
         createGroup(group, this.state.profile.id, this.state.gameId)
-            .then(response => this.props.history.push("/gamebook"))
+            .then(response => this.props.history.push("/search"))
 
     render() {
         return (
@@ -45,7 +45,7 @@ export class CreateGroupComponent extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>

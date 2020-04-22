@@ -25,7 +25,7 @@ export class CommonComponent extends React.Component {
                                   // profile: {...this.state.profile, username: undefined}
                                   profile: null
                               })
-                this.props.history.push('/gamebook')
+                this.props.history.push('/search')
             })
 
     }
@@ -34,10 +34,10 @@ export class CommonComponent extends React.Component {
         return (
             <div>
                 {console.log(this.state.profile)}
-                <a href="/gamebook">Games</a>
+                <a href="/search">Games</a>
                 {/*<button style={{float:"right"}}*/}
                 {/* className={'btn'}>*/}
-                {/*    <a  href="/gamebook" className={'fa fa-home'}>*/}
+                {/*    <a  href="/search" className={'fa fa-home'}>*/}
                 {/*    </a>*/}
                 {/*</button>*/}
                 {this.state.profile === null && <div className="col">
@@ -47,7 +47,7 @@ export class CommonComponent extends React.Component {
                 </div>}
                 {this.state.profile !== null && <a
                     className={'m-2'}
-                    href="/gamebook"
+                    href="/search"
                     style={{float: "right"}}
                     onClick={this.logout}
                 >

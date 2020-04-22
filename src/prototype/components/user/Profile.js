@@ -25,7 +25,7 @@ export class Profile extends React.Component{
         logout()
             .then(status =>{
                 localStorage.clear()
-                this.props.history.push('/gamebook')
+                this.props.history.push('/search')
             })
     }
 
@@ -45,7 +45,7 @@ export class Profile extends React.Component{
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>

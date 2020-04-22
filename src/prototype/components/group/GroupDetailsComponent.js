@@ -26,7 +26,7 @@ export class GroupDetailsComponent extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>
@@ -58,7 +58,7 @@ export class GroupDetailsComponent extends React.Component {
                                 {this.state.group.groupAdmin !== undefined &&
                                 <li className="list-group-item form-control" style={{float:"left"}}>
                                     <Link
-                                        to={`/gamebook/user/${this.state.group.groupAdmin.id}`}
+                                        to={`/search/user/${this.state.group.groupAdmin.id}`}
                                         style={{float: "left"}}
                                         href=""> {this.state.group.groupAdmin.username}</Link>
                                 </li>
@@ -69,7 +69,7 @@ export class GroupDetailsComponent extends React.Component {
                                     <li className="list-group-item form-control">
 
                                         <Link
-                                            to={`/gamebook/user/${user.id}`}
+                                            to={`/search/user/${user.id}`}
                                             style={{float: "left"}}
                                             href=""> {user.username}</Link>
                                     </li>

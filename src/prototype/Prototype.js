@@ -4,6 +4,7 @@ import gameService from '../service/GameService'
 import GameCard from './GameCard'
 import {GroupsComponent} from "./components/group/GroupsComponent";
 import {logout} from "../service/UserService";
+import {Link} from "react-router-dom";
 
 
 export default class Prototype extends React.Component {
@@ -51,7 +52,7 @@ export default class Prototype extends React.Component {
                 this.setState({
                     profile: null
                 })
-                this.props.history.push('/gamebook')
+                this.props.history.push('/search')
             })
 
     }
@@ -63,13 +64,15 @@ export default class Prototype extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <a className="nav-link" onClick={() =>
-                                this.setState({
-                                    component: 'games'
-                                })
+                            <Link to={'/search'} className="nav-link" onClick={() => {
+                                    this.setState({
+                                        component: 'games',
+                                        gameNameSearch: ''
+                                    });
+                                }
                             }>
                                 <i className="fas fa-home"></i>
-                            </a>
+                            </Link>
                         </li>
                         <li style={{cursor: "pointer"}}>
                             <a className="nav-link" onClick={() =>
@@ -131,7 +134,7 @@ export default class Prototype extends React.Component {
                                 onKeyPress={(e) => {
                                     if (e.which === 13) {
                                         this.props.history.push(
-                                            `/gamebook/${this.state.gameNameSearch}`);
+                                            `/search/${this.state.gameNameSearch}`);
                                         this.props.history.go(0)
                                     }
                                 }}
@@ -145,7 +148,7 @@ export default class Prototype extends React.Component {
                                 <i className="fas fa-search game-search-icon"
                                    onClick={() => {
                                        this.props.history.push(
-                                           `/gamebook/${this.state.gameNameSearch}`);
+                                           `/search/${this.state.gameNameSearch}`);
                                        this.props.history.go(0)
                                    }}></i>
                         </div>

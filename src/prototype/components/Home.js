@@ -20,7 +20,7 @@ export default class Home extends React.Component{
                 <div className="home-page">
                     <h1>Gamehubs</h1>
                     <button className="home-btn">
-                        <Link to={`/gamebook`}>
+                        <Link to={`/search`}>
                             Welcome
                         </Link>
                     </button>

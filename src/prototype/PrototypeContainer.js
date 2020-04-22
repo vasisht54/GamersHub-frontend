@@ -101,7 +101,7 @@ export class PrototypeContainer extends React.Component {
                     />
 
                     <Route
-                        path="/gamebook"
+                        path="/search"
                         exact={true}
                         render = {(props) =>
                             <Prototype
@@ -121,7 +121,7 @@ export class PrototypeContainer extends React.Component {
                         component={Login}
                     />
                     <Route
-                        path="/gamebook/user/:userId"
+                        path="/search/user/:userId"
                         exact={true}
                         render = {(props) =>
                         <UserProfile
@@ -130,7 +130,7 @@ export class PrototypeContainer extends React.Component {
                     />
 
                     <Route
-                        path="/gamebook/groups/:groupId"
+                        path="/search/groups/:groupId"
                         exact={true}
                         render = {(props) =>
                             <GroupDetailsComponent
@@ -155,7 +155,7 @@ export class PrototypeContainer extends React.Component {
                     />
 
                     <Route
-                        path="/gamebook/:gameNameSearch"
+                        path="/search/:gameNameSearch"
                         exact={true}
                         render={(props) =>
                             <Prototype
@@ -166,7 +166,7 @@ export class PrototypeContainer extends React.Component {
                     />
 
                     <Route
-                        path="/gamebook/game/:gameId"
+                        path="/search/details/:gameId"
                         exact={true}
                         component={GameDetails}
                     />

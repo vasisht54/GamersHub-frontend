@@ -89,7 +89,7 @@ export class Group extends React.Component {
                 <nav>
                     <ul className="topnav" id="dropDown">
                         <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
+                            <Link to={`/search`}>
                                 <i className="fas fa-home"></i>
                             </Link>
                         </li>
@@ -102,7 +102,7 @@ export class Group extends React.Component {
                         <form>
 
                             <h1 >
-                            <Link to={`/gamebook/groups/${this.props.group.id}`}
+                            <Link to={`/search/groups/${this.props.group.id}`}
                                   style={{float: "left"}}
                                   href=""> {this.props.group.name}</Link>
                         </h1>
