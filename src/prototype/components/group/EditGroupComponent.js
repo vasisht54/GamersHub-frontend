@@ -114,7 +114,7 @@ export class EditGroupComponent extends React.Component {
                              this.state.members.map((member) =>
                                                         <li className="list-group-item m-2">
                                                             <Link
-                                                                to={`/gamebook/user/${member.id}`}
+                                                                to={`/gamebook/profile/${member.id}`}
                                                                 style={{float: "left"}}
                                                                 href=""> {member.username}</Link>
                                                             <button

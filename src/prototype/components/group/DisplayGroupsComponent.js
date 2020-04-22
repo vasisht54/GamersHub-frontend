@@ -101,7 +101,7 @@ export class DisplayGroupsComponent extends React.Component {
 
                     <ul className="list-group m-4">
                         <li className="list-group-item m-2">
-                            <Link to={`/gamebook/user/${this.props.admin.id}`}
+                            <Link to={`/gamebook/profile/${this.props.admin.id}`}
                                   style={{float: "left"}}
                                   href=""> {this.props.admin.username}</Link>
 
@@ -111,7 +111,7 @@ export class DisplayGroupsComponent extends React.Component {
                         {this.state.members.map((member) =>
                                                     <li key={member.id}
                                                         className="list-group-item m-2">
-                                                        <Link to={`/gamebook/user/${member.id}`}
+                                                        <Link to={`/gamebook/profile/${member.id}`}
                                                               style={{float: "left"}}
                                                               href=""> {member.username}</Link>
                                                         {/*{this.props.profile.id*/}

@@ -121,7 +121,7 @@ export class PrototypeContainer extends React.Component {
                         component={Login}
                     />
                     <Route
-                        path="/gamebook/user/:userId"
+                        path="/gamebook/profile/:userId"
                         exact={true}
                         render = {(props) =>
                         <UserProfile

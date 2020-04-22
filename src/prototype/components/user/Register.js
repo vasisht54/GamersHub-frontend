@@ -15,6 +15,13 @@ export default class Register extends React.Component {
         if(this.state.password !== this.state.verifyPassword){
             alert('Passwords do not match')
         }
+        else if(this.state.username === ''){
+            alert('Username cannot be empty')
+        }
+        else if(this.state.password === ''){
+            alert('Password cannot be empty')
+        }
+
         else {
             // alert('user registered')
             register(user)
@@ -136,7 +143,7 @@ export default class Register extends React.Component {
 
                                 <div className="row">
                                     <div className="col-sm-6">
-                                        <a href="../login/login.template.client.html"
+                                        <a href="/login"
                                            className="wbdv-link wbdv-login">
                                             Login
                                         </a>

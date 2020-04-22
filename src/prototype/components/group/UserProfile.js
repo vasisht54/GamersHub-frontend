@@ -70,33 +70,7 @@ export class UserProfile extends React.Component{
                             <p className="form-control col-10">{this.state.userProfile.username}</p>
 
                         </div>
-                        <div className="row">
-                            <h4 className="col-2"
-                                style={{float: "left"}}>First Name</h4>
 
-
-
-                            <p className="form-control col-10">{this.state.userProfile.firstName}</p>
-
-                        </div>
-                        <div className="row">
-                            <h4 className="col-2"
-                                style={{float: "left"}}>Last Name</h4>
-
-
-
-                            <p className="form-control col-10">{this.state.userProfile.lastName}</p>
-
-                        </div>
-                        <div className="row">
-                            <h4 className="col-2"
-                                style={{float: "left"}}>Date of Birth</h4>
-
-
-
-                            <p className="form-control col-10">{this.state.userProfile.dob}</p>
-
-                        </div>
                         <div className="row container-fluid">
                             <h4 className="col-2">Groups Owned</h4>
 
@@ -109,7 +83,7 @@ export class UserProfile extends React.Component{
                                                 <ul className="list-group">
                                                     {group.usersList.map(user =>
                                                         <li className="list-group-item">
-                                                            <Link to={`/gamebook/user/${user.id}`}
+                                                            <Link to={`/gamebook/profile/${user.id}`}
                                                                   style={{float: "left"}}
                                                                   href=""> {user.username}</Link>
                                                         </li>

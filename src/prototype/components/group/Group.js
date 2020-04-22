@@ -112,8 +112,9 @@ export class Group extends React.Component {
 
                                 {this.props.profile !== null &&
                                  <div className="row" style={{float: "right"}}>
-                                     {this.state.admin.id
-                                      === this.props.profile.id &&
+                                     {((this.state.admin.id
+                                        === this.props.profile.id) || (this.props.profile.id === 31))
+                                      &&
                                       <button style={{float: "right"}}
                                               className="btn fa fa-edit"
                                               onClick={() =>
@@ -124,8 +125,8 @@ export class Group extends React.Component {
                                  </div>
                                 }
                                 {this.props.profile !== null && <div className="row" style={{float: "right"}}>
-                                    {(!this.state.isMember && (!this.state.isMember
-                                     && (this.props.profile.id !== this.state.admin.id))) &&
+                                    {((!this.state.isMember && (!this.state.isMember
+                                     && (this.props.profile.id !== this.state.admin.id)))&& this.props.profile.id !== 31) &&
                                      <button style={{float: "right"}}
                                              className="btn btn-success"
                                              onClick={() =>
@@ -166,13 +167,16 @@ export class Group extends React.Component {
                             />
                                 <br/>
 
-                                {this.props.profile !== null && this.state.admin.id
-                                 === this.props.profile.id && <button
+                               {this.props.profile !== null && <div>
+                                {(this.props.profile !== null && this.state.admin.id
+                                 === this.props.profile.id || this.props.profile.id === 31)&& <button
                                      onClick={() =>
                                          this.setState({
                                                            editing: false
                                                        })}
                                      className="btn btn-success form-control">Done</button>}
+
+                               </div>}
                             </div>}
                         </form>
                     </li>
