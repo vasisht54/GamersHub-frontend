@@ -49,7 +49,7 @@ export default class GameDetails extends React.Component {
                         <img className="game-img col-4 col-md-6 col-sm-12" src={this.state.game.background_image}/>
                         <div className="col-8 col-md-6 col-sm-12">
                             <h3>Game Description</h3>
-                            <p className="game-description">{this.state.game.description}</p>
+                            <div className="game-description" dangerouslySetInnerHTML={{__html: this.state.game.description}}></div>
                         </div>
                     </div>
 
