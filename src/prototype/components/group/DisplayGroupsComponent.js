@@ -50,7 +50,7 @@ export class DisplayGroupsComponent extends React.Component {
     render() {
         return (
             <div>
-                
+
                 <br/>
                 <form>
                     <div className="row">

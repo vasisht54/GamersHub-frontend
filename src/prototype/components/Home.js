@@ -18,7 +18,7 @@ export default class Home extends React.Component{
             <body style={{backgroundColor: "#e3f2fd"}}>
 
                 <div className="home-page">
-                    <h1>Gamehubs</h1>
+                    <h1>GamersHub</h1>
                     <button className="home-btn">
                         <Link to={`/gamebook`}>
                             Welcome
