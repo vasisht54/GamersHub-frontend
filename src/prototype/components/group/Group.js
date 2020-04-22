@@ -86,15 +86,6 @@ export class Group extends React.Component {
     render() {
         return (
             <div>
-                <nav>
-                    <ul className="topnav" id="dropDown">
-                        <li style={{cursor: "pointer"}}>
-                            <Link to={`/gamebook`}>
-                                <i className="fas fa-home"></i>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
 
                 <ul className="list-group m-4">
 
