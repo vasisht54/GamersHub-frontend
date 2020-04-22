@@ -39,12 +39,12 @@ export class EditGroupComponent extends React.Component {
                 </nav>
                 <div className="row" style={{float: "right"}}>
                     <button type="button"
-                            className="btn"
+                            className="btn btn-danger"
                             onClick={() => this.props.deleteGroup(
                                 this.state.groupInfo.id)
 
                             }>
-                        X
+                        Delete Group
                     </button>
                 </div>
                 <br/>

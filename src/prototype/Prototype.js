@@ -127,6 +127,7 @@ export default class Prototype extends React.Component {
                 {
                     this.state.component === "games" &&
                     <div className="container">
+                        {this.state.profile !== null && <h2>Welcome {this.state.profile.username}</h2>}
                         <div className="game-search-box">
                             <input
                                 type="text"

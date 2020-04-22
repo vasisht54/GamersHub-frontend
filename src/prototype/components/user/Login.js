@@ -100,7 +100,8 @@ export class Login extends React.Component {
                                 <div className="row">
 
                                     <div className="col-6">
-                                        <a href="#" className="wbdv-link wbdv-forgot-password">Forgot
+                                        <a onClick={() => alert('Please contact the admin')}
+                                            href="#" className="wbdv-link wbdv-forgot-password">Forgot
                                             Password?</a>
                                     </div>
 
