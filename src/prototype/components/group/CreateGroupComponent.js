@@ -41,12 +41,19 @@ export class CreateGroupComponent extends React.Component {
             .then(game => this.setState({
                                             gameId: game.id
                                         }))
-            // .then(() => this.createGroup(this.state.group))
+            .then(() => this.createGroup(this.state.group))
     }
 
-    createGroup = (group) =>
-        createGroup(group, this.state.profile.id, this.state.gameId)
-            .then(response => this.props.history.push("/search"))
+    createGroup = (group) => {
+        if (group.name === "") {
+            alert('Group Must have a name')
+        }
+
+        else {
+            createGroup(group, this.state.profile.id, this.state.gameId)
+                .then(response => this.props.history.push("/search"))
+        }
+    }
 
     render() {
         return (
@@ -112,7 +119,7 @@ export class CreateGroupComponent extends React.Component {
                                                                         game: e.target.value
                                                                     })}
                                      className="form-control wbdv-field wbdv-username"
-                                     placeholder="Game Name"
+                                     placeholder="Game Name (Must Exactly match the actual name of the game Eg BioShock 2)"
                                  />
                                  {/*<WindowedSelect*/}
                                  {/*    options={this.state.users.username}*/}
@@ -199,9 +206,9 @@ export class CreateGroupComponent extends React.Component {
 
                          <button type="button" className="btn btn-primary form-control col-10"
                                  onClick={() => {
-                                     // this.getGameId(this.state.game)
+                                     this.getGameId(this.state.game)
 
-                                     this.createGroup(this.state.group)
+                                     // this.createGroup(this.state.group)
                                  }}>
                              Create Group
                          </button>
