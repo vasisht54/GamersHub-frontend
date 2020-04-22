@@ -175,7 +175,9 @@ export default class Prototype extends React.Component {
                     />
                 }
 
-
+                <Link to={'/privacy-policy'} className="nav-link">
+                    Privacy Policy
+                </Link>
             </div>
         )
     }

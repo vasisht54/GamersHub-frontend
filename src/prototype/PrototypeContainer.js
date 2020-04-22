@@ -15,6 +15,7 @@ import {CreateGroupComponent} from "./components/group/CreateGroupComponent";
 import UserAdmin from "../user-admin/user-admin";
 import {UserProfile} from "./components/group/UserProfile";
 import {GroupDetailsComponent} from "./components/group/GroupDetailsComponent";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 
 export class PrototypeContainer extends React.Component {
@@ -143,6 +144,12 @@ export class PrototypeContainer extends React.Component {
                         path="/profile"
                         exact={true}
                         component={Profile}
+                    />
+
+                    <Route
+                        path="/privacy-policy"
+                        exact={true}
+                        component={PrivacyPolicy}
                     />
 
                     <Route
