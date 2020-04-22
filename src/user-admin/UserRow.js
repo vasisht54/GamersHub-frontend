@@ -82,13 +82,13 @@ class UserRow extends React.Component {
                     {
                         !this.state.editing &&
                         <span className="wbdv-row wbdv-title">
-                            {this.state.user.dob}
+                            {this.state.user.dob !== null && this.state.user.dob.slice(0,10)}
                         </span>
                     }
                     {
                         this.state.editing &&
                         <input type="date" className="wbdv-editFld"
-                               value={this.state.user.dob}
+                               value={this.state.user.dob !== null && this.state.user.dob.slice(0,10)}
                                onChange={(e) => this.setState({
                                    user: {
                                        ...this.state.user,

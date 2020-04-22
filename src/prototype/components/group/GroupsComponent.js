@@ -27,6 +27,10 @@ export class GroupsComponent extends React.Component {
     }
 
     componentDidMount() {
+        if(this.props.profile === null){
+            alert('You can only see the groups now, log in to access all functionalities')
+        }
+
         findAllGroups()
             .then(groups =>
                       // console.log(groups)
