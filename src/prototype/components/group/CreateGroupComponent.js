@@ -3,6 +3,8 @@ import {createGroup} from "../../../service/GameGroupService";
 import {Link} from "react-router-dom";
 import {findMyGameByName, getAllGames} from "../../../service/GameService";
 import "../../Prototype.css"
+import WindowedSelect from "react-windowed-select";
+import {findAllUsers} from "../../../service/UsersService";
 
 export class CreateGroupComponent extends React.Component {
 
@@ -17,6 +19,7 @@ export class CreateGroupComponent extends React.Component {
         },
         profile: JSON.parse(localStorage.getItem('profile')),
         games: [],
+        users:[],
         gameId: '',
         game:''
     }
@@ -26,6 +29,11 @@ export class CreateGroupComponent extends React.Component {
             .then(games => this.setState({
                                              games: games
                                          }))
+
+        findAllUsers().
+        then(users => this.setState({
+            users:users
+                                                          }) )
     }
 
     getGameId = (name) => {
@@ -33,7 +41,7 @@ export class CreateGroupComponent extends React.Component {
             .then(game => this.setState({
                                             gameId: game.id
                                         }))
-            .then(() => this.createGroup(this.state.group))
+            // .then(() => this.createGroup(this.state.group))
     }
 
     createGroup = (group) =>
@@ -87,7 +95,7 @@ export class CreateGroupComponent extends React.Component {
                                                                     })}
                                      value={this.state.group.name}
                                      className="form-control wbdv-field wbdv-username"
-                                     placeholder="Username"/>
+                                     placeholder="Group Name"/>
 
                              </div>
                          </div>
@@ -97,6 +105,8 @@ export class CreateGroupComponent extends React.Component {
                              <label className="col-sm-2 col-form-label">Game</label>
                              <div className="col-sm-10">
 
+                                 {console.log(this.state.games)}
+
                                  <input
                                      onChange={(e) => this.setState({
                                                                         game: e.target.value
@@ -104,14 +114,19 @@ export class CreateGroupComponent extends React.Component {
                                      className="form-control wbdv-field wbdv-username"
                                      placeholder="Game Name"
                                  />
+                                 {/*<WindowedSelect*/}
+                                 {/*    options={this.state.users.username}*/}
+                                 {/*    onChange={(e) =>this.getGameId(e.target.value)}*/}
+                                 {/*    value={this.state.group.gameId}*/}
+                                 {/*/>*/}
                                  {/*<select*/}
                                  {/*    onChange={(e) =>this.getGameId(e.target.value)}*/}
                                  {/*    value={this.state.group.gameId}*/}
                                  {/*    className="form-control wbdv-field wbdv-password"*/}
                                  {/*    placeholder="Id">*/}
 
-                                 {/*    {this.state.games.map(game =>*/}
-                                 {/*                              <option>{game.name}</option>*/}
+                                 {/*    {this.state.users.map(game =>*/}
+                                 {/*                              <option>{game.username}</option>*/}
                                  {/*    )}*/}
 
                                  {/*</select>*/}
@@ -136,6 +151,7 @@ export class CreateGroupComponent extends React.Component {
                                                       }
                                                   })}
                                 value={this.state.group.description}
+                                placeholder="Description"
                                 type="date" className="form-control wbdv-field wbdv-dob"/>
                              </div>
 
@@ -183,9 +199,9 @@ export class CreateGroupComponent extends React.Component {
 
                          <button type="button" className="btn btn-primary form-control col-10"
                                  onClick={() => {
-                                     this.getGameId(this.state.game)
+                                     // this.getGameId(this.state.game)
 
-                                     // this.createGroup(this.state.group)
+                                     this.createGroup(this.state.group)
                                  }}>
                              Create Group
                          </button>
