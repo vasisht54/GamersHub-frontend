@@ -109,7 +109,7 @@ class UserRow extends React.Component {
                         </button>
                     }
                     {
-                        !this.state.editing &&
+                        !this.state.editing && this.props.user.id !== 31 &&
                         <div>
                             <button className="wbdv-row wbdv-button"
                                     onClick={() => {
