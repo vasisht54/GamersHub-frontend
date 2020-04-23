@@ -83,8 +83,8 @@ export class GroupsComponent extends React.Component {
     render() {
         return (
             <div>
-                <ul className="nav nav-tabs ">
-                    <li className="nav-item" style={{cursor: "pointer"}}>
+                <ul className="nav nav-tabs" style={{display: "inline"}}>
+                    <li className="nav-item" style={{cursor: "pointer", float: "left"}}>
                         <a className="nav-link" onClick={() =>
                             this.setState({
                                               component: 'a-groups'
@@ -94,7 +94,7 @@ export class GroupsComponent extends React.Component {
                         </a>
                     </li>
                     {this.props.profile !== null && <li className="nav-item"
-                                                        style={{cursor: "pointer"}}>
+                                                        style={{cursor: "pointer", float: "left"}}>
                         <a className="nav-link" onClick={() =>
                             this.setState({
                                               component: 'm-groups'
@@ -103,11 +103,16 @@ export class GroupsComponent extends React.Component {
                             My Groups
                         </a>
                     </li>}
+                    {this.props.profile !== null &&
+                        <li className="nav-item"
+                            style={{cursor: "pointer", float: "right"}}>
+                            <a className="nav-link"
+                                href='/creategroup'>Create Group</a>
+                        </li>
+                    }
                 </ul>
                 <br/>
-                {this.props.profile !== null && <a
-                    href='/creategroup'
-                    style={{float: "right"}}>Create Group</a>}
+
                 <br/>
                 {this.state.groups.length !== 0 && <div className="container">
                     {console.log(this.state.groups.length)}
