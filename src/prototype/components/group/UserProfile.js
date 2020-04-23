@@ -62,8 +62,8 @@ export class UserProfile extends React.Component{
                     <br/>
                     <form>
                         <div className="row">
-                            <h4 className="col-2"
-                                style={{float: "left"}}>User Name</h4>
+                            <label className="col-sm-2 col-form-label"
+                                   style={{float: "left"}}>User Name</label>
 
 
 
@@ -72,14 +72,14 @@ export class UserProfile extends React.Component{
                         </div>
 
                         <div className="row container-fluid">
-                            <h4 className="col-2">Groups Owned</h4>
+                            <label className="col-sm-2 col-form-label">Groups Owned</label>
 
                             <div className="col-10 ">
                                 {this.state.userGroups.length>0 && <div>
                                     <ul className="list-group">
                                         {this.state.userGroups.map(group =>
                                             <li key={group.id} className="list-group-item m-2">
-                                                <h3>{group.name}</h3>
+                                                <label>{group.name}</label>
                                                 <ul className="list-group">
                                                     {group.usersList.map(user =>
                                                         <li className="list-group-item">

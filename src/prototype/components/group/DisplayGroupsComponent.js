@@ -58,8 +58,8 @@ export class DisplayGroupsComponent extends React.Component {
                 <br/>
                 <form>
                     <div className="row">
-                        <h4 className="col-2"
-                            style={{float: "left"}}>Group Name :</h4>
+                        <label className="col-sm-2 col-form-label"
+                               style={{float: "left"}}>Group Name </label>
 
 
                         {this.state.groupInfo.name !== null &&
@@ -67,8 +67,8 @@ export class DisplayGroupsComponent extends React.Component {
                         }
                     </div>
                     <div className="row">
-                        <h4 className="col-2"
-                            style={{float: "left"}}>Game :</h4>
+                        <label className="col-sm-2 col-form-label"
+                               style={{float: "left"}}>Game </label>
 
 
                         {this.props.game !== null &&
@@ -76,8 +76,8 @@ export class DisplayGroupsComponent extends React.Component {
                         }
                     </div>
                     <div className="row">
-                    <h4 className="col-2"
-                    style={{float: "left"}}>Description :</h4>
+                        <label className="col-sm-2 col-form-label"
+                               style={{float: "left"}}>Description </label>
 
 
                     {this.state.groupInfo.description !== null &&
