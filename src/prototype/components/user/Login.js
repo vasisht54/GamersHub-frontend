@@ -23,7 +23,7 @@ export class Login extends React.Component {
         login(user)
             .then(newUser => {
                       if (newUser.id === 0 && newUser.username === null) {
-                          alert('User does not exist')
+                          alert('Please Check your credentials. No profile Found for these credentials')
                       }
 
                       // console.log(JSON.stringify(newUser))
